@@ -134,7 +134,7 @@ class KorpkBot:
             elif choice == "grafiki":
                 keyboard = [
                     [InlineKeyboardButton("📋 Графіки освітнього процесу", url="http://korpk.org.ua/grafiki-navchalnogo-procesu/")],
-                    [InlineKeyboardButton("🎓 ОПП", url="http://korpk.org.ua/opp-obgovorennya-proektiv/")],
+                    [InlineKeyboardButton("🎓 Освітньо-професійні програми", url="http://korpk.org.ua/opp-obgovorennya-proektiv/")],
                     [InlineKeyboardButton("📅 Розклади занять", url="http://korpk.org.ua/розклади/")],
                     [InlineKeyboardButton("🗣️ Графік консультацій", url="http://korpk.org.ua/грфік-консультацій-викладачів/")],
                     [InlineKeyboardButton("📝 Курсова робота", url="http://korpk.org.ua/курсова-робота/")],
@@ -161,14 +161,14 @@ class KorpkBot:
                 )
             
             elif choice == "feedback":
-                await query.edit_message_text(
-                    "✍️ *Зворотній зв'язок*\n\n"
-                    "📧 *Email:* `lydav.golub@gmail.com`\n\n"
-                    "📱 *Телефон:* `+380 67 123 45 67`\n\n"
-                    "💬 Пиши нам будь-які питання!",
-                    parse_mode='Markdown',
-                    reply_markup=self.back_button()
-                )
+                    await query.edit_message_text(
+                        "✍️ *Зворотній зв'язок*\n\n"
+                        "Якщо маєш питання або пропозиції — звертайся:\n\n"
+                        "📧 Email: lydav.golub@gmail.com",
+                        parse_mode="Markdown",
+                        reply_markup=back_button()
+                    )
+
             
             elif choice == "status":
                 await self.status(update, context)
